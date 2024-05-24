@@ -7,41 +7,50 @@
     "scheme": "appqr",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/app-icon-all.png",
+    "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "./assets/images/splash-logo-all.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#191015"
+      "backgroundColor": "#FDB623"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/2ce62e0d-637b-40b9-bbbd-980722324efc"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     },
     "jsEngine": "hermes",
     "assetBundlePatterns": [
       "**/*"
     ],
     "android": {
-      "icon": "./assets/images/app-icon-android-legacy.png",
+      "icon": "./assets/images/icon.png",
       "package": "com.yoong.qr",
+      "buildNumber": "1",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
-        "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundImage": "./assets/images/icon.png"
       },
       "splash": {
-        "image": "./assets/images/splash-logo-android-universal.png",
+        "image": "./assets/images/splash.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#FDB623"
       }
     },
     "ios": {
-      "icon": "./assets/images/app-icon-ios.png",
-      "supportsTablet": true,
+      "icon": "./assets/images/icon.png",
+      "supportsTablet": false,
       "bundleIdentifier": "com.yoong.qr",
+      "buildNumber": "5",
       "splash": {
-        "image": "./assets/images/splash-logo-ios-mobile.png",
-        "tabletImage": "./assets/images/splash-logo-ios-tablet.png",
+        "image": "./assets/images/splash.png",
+        "tabletImage": "./assets/images/splash.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#FDB623"
+      },
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "web": {
@@ -49,7 +58,7 @@
       "splash": {
         "image": "./assets/images/splash-logo-web.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#FDB623"
       },
       "bundler": "metro"
     },
@@ -67,10 +76,31 @@
           }
         }
       ],
-      "expo-font"
+      "expo-font",
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera to scan QR codes.",
+          "enableCodeScanner": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "$(PRODUCT_NAME) needs access to your photos to scan QR codes."
+        }
+      ]
     ],
     "experiments": {
       "tsconfigPaths": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2ce62e0d-637b-40b9-bbbd-980722324efc"
+      },
+      "packagerOpts": {
+        "config": "metro.config.js"
+      }
     }
   },
   "ignite": {

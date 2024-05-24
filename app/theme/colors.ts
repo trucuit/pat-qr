@@ -2,13 +2,13 @@
 
 const palette = {
   neutral100: "#FFFFFF",
-  neutral200: "#F4F2F1",
+  neutral200: "#E2E2E2",
   neutral300: "#D7CEC9",
   neutral400: "#B6ACA6",
   neutral500: "#978F8A",
   neutral600: "#564E4A",
-  neutral700: "#3C3836",
-  neutral800: "#191015",
+  neutral700: "#333333",
+  neutral800: "#3D3D3D",
   neutral900: "#000000",
 
   primary100: "#F4E0D9",
@@ -18,7 +18,7 @@ const palette = {
   primary500: "#C76542",
   primary600: "#A54F31",
 
-  secondary100: "#DCDDE9",
+  secondary100: "#C3C7C7",
   secondary200: "#BCC0D6",
   secondary300: "#9196B9",
   secondary400: "#626894",
@@ -28,13 +28,14 @@ const palette = {
   accent200: "#FFE1B2",
   accent300: "#FDD495",
   accent400: "#FBC878",
-  accent500: "#FFBB50",
+  accent500: "#FDB623",
 
   angry100: "#F2D6CD",
   angry500: "#C03403",
 
   overlay20: "rgba(25, 16, 21, 0.2)",
   overlay50: "rgba(25, 16, 21, 0.5)",
+
 } as const
 
 export const colors = {

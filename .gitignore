@@ -86,3 +86,9 @@ web-build/
 !env.js
 
 /coverage
+
+.yarn
+
+ios/
+android/
+dist/
