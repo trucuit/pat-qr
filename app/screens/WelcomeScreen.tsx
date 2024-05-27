@@ -23,6 +23,7 @@ import {
 import Svgs from "../../assets/svgs"
 import { AppStackScreenProps } from "../navigators"
 import { colors } from "../theme"
+import RNQRGenerator from "rn-qr-generator"
 
 const ICONS = [
   { Svg: Svgs.gallery, label: "Gallery" },
@@ -113,7 +114,15 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
       quality: 1,
     })
 
-    console.log(result)
+    RNQRGenerator.detect({
+      uri: result.assets?.[0].uri,
+    })
+      .then((response) => {
+        const { values } = response // Array of detected QR code values. Empty if nothing found.
+        console.log("values", values)
+        navigation.navigate("Result", { qr: values?.[0] || "" })
+      })
+      .catch((error) => console.log("Cannot detect QR code in image", error))
   }
 
   useEffect(() => {
@@ -171,7 +180,9 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             </View>
             <View style={styles.iconContainer}>
               <View style={styles.qrSvg}>
-                <Image style={styles.qrIcon} source={images.qr}></Image>
+                <Pressable onPress={pickImage}>
+                  <Image style={styles.qrIcon} source={images.qr} />
+                </Pressable>
               </View>
               {ICONS.slice(3).map(({ Svg, label }, index) => (
                 <Pressable

@@ -54,9 +54,10 @@ function renderSettingsOption(item: HistoryItem, removeHistory: (id: string) => 
   return (
     <View style={styles.data}>
       <View style={styles.dataHistory}>
-        <QrSvgIcon width={spacing.lg} height={spacing.lg} />
-        <View style={styles.spacingSm} />
         <View>
+          <QrSvgIcon width={spacing.lg} height={spacing.lg} />
+        </View>
+        <View style={styles.spacingSm}>
           <Text style={styles.text} weight="semiBold">
             {item?.data}
           </Text>
@@ -92,6 +93,7 @@ const styles = StyleSheet.create({
   dataHistory: {
     alignItems: "center",
     flexDirection: "row",
+    flex: 1,
   },
   paddingLg: {
     flex: 1,
@@ -101,7 +103,8 @@ const styles = StyleSheet.create({
     height: spacing.md,
   },
   spacingSm: {
-    width: spacing.sm,
+    flex: 1,
+    marginHorizontal: spacing.xs,
   },
   text: {
     color: colors.palette.accent100,

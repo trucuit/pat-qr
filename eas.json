@@ -56,7 +56,7 @@
         "cocoapods": "1.15.2"
       },
       "android": {
-        "buildType": "apk",
+        "credentialsSource": "local",
         "ndk": "25.1.8937393"
       },
       "autoIncrement": true,
